@@ -52,17 +52,6 @@ Do#4    C#4     61     6100  1     277.18Hz  cis'  Do#4
 C4+31c  C4+31c  60.31  6031  0.31  266.35Hz  cih'  Do4+31c
 ```
 
-It understands rhythms the same way: `q e. s`, `1/4 3/16`, `4. 8`, `x..x..x.`,
-`250ms` are all welcome, and pitch and rhythm series can be combined into
-isorhythmic voices, Messiaen style.
-
-It has a built-in synthesizer, so you can hear any result: `serious play …`,
-or add `--play` to any command. Results can also be written out as MIDI,
-LilyPond, MusicXML or text for your DAW or notation program. It also has an interactive keyboard, where you
-click (or type) a row on a one-octave piano.
-
-Pure Python (3.10+), no dependencies.
-
 ## Installation
 
 From the project folder:
