@@ -1,6 +1,6 @@
 # Serious
 
-Computer-aided composition on the command line.
+Computer-aided composition on the command line, focusing on serial manipulations, pitch-class analysis, and spectral/rhythm tools — aimed at quick sketching of musical ideas.
 
 > **Status: Alpha.** Serious is currently in an experimental alpha state; commands, flags, and output formats may change.
 
@@ -10,13 +10,25 @@ you ask for another one with `--to`.
 
 ## At a Glance
 
-- **Convert & inspect pitches:** `serious F#4 440hz 6250` (all notations) or `serious convert C E G --to midi`
-- **Transform series:** `serious transpose M3 Eb4 G4 Bb4`, `serious invert --axis E4 C4 D4 G4`, `serious retrograde …`, `serious rotate -n 2 …`
-- **Pitch-class sets & 12-tone rows:** `serious set 0 1 4 6` (normal/prime form, Forte name, interval vector), `serious matrix 0 e 3 4 8 7 9 5 6 1 2 t`, `serious improvise --all-interval`
-- **Interactive row builder:** `serious keyboard` (click or type a row on a terminal piano and pipe it into other commands)
-- **Harmony & spectra:** `serious chord Cmaj7#11`, `serious scale D dorian`, `serious harmonics C2 16 --approx 4`, `serious ring …`, `serious fm …`
-- **Rhythm & isorhythm:** `serious rhythm euclid 5 8`, `serious rhythm palindrome s e q.`, `serious isorhythm --color "C4 E4 D4 F#4 Bb4" --talea "q e. s q"`
-- **Hear or export any command:** add `--play` to play through the built-in synth, or `--out score.mid` / `.ly` / `.musicxml` / `.mxl` / `.wav` / `.txt`
+- **Fortean pitch-class set analysis:** normal & prime form, Forte name, interval vector, complement, Z-partner, and invariance (`serious set 0 1 4 6`, `serious matrix 0 e 3 4 8 7 9 5 6 1 2 t`)
+- **Classic serial transformations:** `serious transpose M3 Eb4 G4 Bb4`, `serious invert --axis E4 C4 D4 G4`, `serious retrograde …`, `serious rotate -n 2 …`
+- **Accepts & translates any pitch format:** note names, microtonal cents, MIDI, midicents, pitch classes, Hz, LilyPond, Helmholtz, and solfège (`serious F#4 440hz 6250` or `serious convert C E G --to midi`)
+- **Spectral tools:** harmonic/undertone series and stretched/compressed overtone series (`serious harmonics C2 16 --stretch 1.05 --approx 4`), plus ring and FM modulation (`serious ring …`, `serious fm C4 G4 --index 3`)
+- **Interactive keyboard:** click or type a 12-tone row on a terminal piano (`serious keyboard`) and pipe it straight into other commands (`serious keyboard | serious matrix`)
+- **Rhythm & isorhythm:** Euclidean rhythms, Messiaen non-retrogradable palindromes and added values, augment/diminish, and multi-voice isorhythm (`serious isorhythm --color "C4 E4 D4 F#4 Bb4" --talea "q e. s q"`)
+- **Command-line playback & cross-platform export:** add `--play` to hear any command through the built-in synth, or `--out` to export `.mid`, `.ly` (LilyPond), `.musicxml`, `.mxl`, `.wav`, or `.txt`
+
+```console
+$ serious set 0 1 4 6
+pitch classes    {0,1,4,6}
+normal form      [0,1,4,6]
+prime form       (0146)
+Forte name       4-Z15A
+interval vector  <111111>
+complement       {2,3,5,7,8,9,t,e}   [8-Z15]
+Z-related to     4-Z29
+invariant under  T0
+```
 
 ![Interactive keyboard view](docs/keyboard.png)
 
