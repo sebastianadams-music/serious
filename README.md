@@ -2,9 +2,25 @@
 
 Computer-aided composition on the command line.
 
+> **Status: Alpha.** Serious is currently in an experimental alpha state; commands, flags, and output formats may change.
+
 Write pitches however you like — `F#4`, `Bb`, `66`, `6600`, `369.99hz`, `fis'`,
 `Fa#4`, `pc:6`, `C4+31c` — and Serious answers **in the same notation**, unless
 you ask for another one with `--to`.
+
+## At a Glance
+
+- **Convert & inspect pitches:** `serious F#4 440hz 6250` (all notations) or `serious convert C E G --to midi`
+- **Transform series:** `serious transpose M3 Eb4 G4 Bb4`, `serious invert --axis E4 C4 D4 G4`, `serious retrograde …`, `serious rotate -n 2 …`
+- **Pitch-class sets & 12-tone rows:** `serious set 0 1 4 6` (normal/prime form, Forte name, interval vector), `serious matrix 0 e 3 4 8 7 9 5 6 1 2 t`, `serious improvise --all-interval`
+- **Interactive row builder:** `serious keyboard` (click or type a row on a terminal piano and pipe it into other commands)
+- **Harmony & spectra:** `serious chord Cmaj7#11`, `serious scale D dorian`, `serious harmonics C2 16 --approx 4`, `serious ring …`, `serious fm …`
+- **Rhythm & isorhythm:** `serious rhythm euclid 5 8`, `serious rhythm palindrome s e q.`, `serious isorhythm --color "C4 E4 D4 F#4 Bb4" --talea "q e. s q"`
+- **Hear or export any command:** add `--play` to play through the built-in synth, or `--out score.mid` / `.ly` / `.musicxml` / `.mxl` / `.wav` / `.txt`
+
+![Interactive keyboard view](docs/keyboard.png)
+
+![Twelve-tone matrix output](docs/matrix.png)
 
 ```console
 $ serious transpose M3 Eb4 G4 Bb4
