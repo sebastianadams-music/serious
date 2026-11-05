@@ -67,6 +67,8 @@ editable (`-e`), changes to the code take effect immediately.
 
 You can also run it without installing: `python3 -m serious …`.
 
+Audio playback (`--play`, `serious play`, `serious keyboard`) requires a command-line player on your PATH (`afplay` on macOS, `paplay` or `aplay` on Linux, or `ffplay` from FFmpeg; Windows uses `winsound`, and `serious keyboard` on Windows requires `pip install windows-curses`).
+
 ## Notations
 
 Serious reads all of these, and you can mix them in one command
