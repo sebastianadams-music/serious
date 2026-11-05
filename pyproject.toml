@@ -7,6 +7,7 @@ name = "serious"
 version = "0.1.0"
 description = "Computer-aided composition on the command line: pitches in any notation, transformations, set theory, spectra."
 readme = "README.md"
+license = {text = "Unlicense"}
 requires-python = ">=3.10"
 dependencies = []
 
